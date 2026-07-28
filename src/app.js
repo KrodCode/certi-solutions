@@ -3,6 +3,14 @@ import helmet from 'helmet';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import {
+  environment,
+} from './config/environment.js';
+
+import {
+  disableApiCaching,
+} from './middlewares/request-security.middleware.js';
+
 import indexRouter from './routes/index.routes.js';
 
 const currentFile = fileURLToPath(import.meta.url);
@@ -12,11 +20,23 @@ const app = express();
 
 app.disable('x-powered-by');
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        upgradeInsecureRequests:
+          environment.isProduction
+            ? []
+            : null,
+      },
+    },
+  }),
+);
 
 app.use(
   express.json({
     limit: '20kb',
+    strict: true,
   }),
 );
 
@@ -33,7 +53,11 @@ app.use(
   ),
 );
 
-app.use('/api', indexRouter);
+app.use(
+  '/api',
+  disableApiCaching,
+  indexRouter,
+);
 
 app.use((request, response) => {
   response.status(404).json({
@@ -43,10 +67,14 @@ app.use((request, response) => {
 });
 
 app.use((error, _request, response, _next) => {
-  console.error('Error interno no controlado:', error.message);
+  console.error(
+    'Error interno no controlado:',
+    error.message,
+  );
 
   response.status(500).json({
-    error: 'Ocurrió un error interno en la aplicación.',
+    error:
+      'Ocurrió un error interno en la aplicación.',
   });
 });
 
