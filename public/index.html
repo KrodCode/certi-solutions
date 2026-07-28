@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Agente inteligente para consultas sobre procesos de certificación de productos."
+  >
+
+  <title>Certi-Solutions</title>
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <span class="brand">Certi-Solutions</span>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="hero">
+      <p class="eyebrow">Challenge Alura Agente</p>
+
+      <h1>
+        Agente inteligente para procesos de certificación
+      </h1>
+
+      <p class="description">
+        Plataforma orientada a responder preguntas basadas en
+        documentación técnica y procedimientos de certificación.
+      </p>
+    </section>
+
+    <section class="status-card" aria-labelledby="status-title">
+      <h2 id="status-title">Estado del servicio</h2>
+
+      <p id="service-status">
+        Verificando conexión con el servidor...
+      </p>
+    </section>
+
+    <section class="agent-card" aria-labelledby="agent-title">
+      <h2 id="agent-title">Asistente documental</h2>
+
+      <p>
+        El módulo de preguntas y respuestas será implementado
+        en una siguiente etapa.
+      </p>
+
+      <label for="question">Pregunta</label>
+
+      <textarea
+        id="question"
+        rows="5"
+        maxlength="1000"
+        placeholder="Escribe una consulta sobre certificación..."
+        disabled
+      ></textarea>
+
+      <button type="button" disabled>
+        Consultar agente
+      </button>
+    </section>
+  </main>
+</body>
+</html>

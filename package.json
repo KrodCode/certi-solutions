@@ -1,0 +1,36 @@
+{
+  "name": "certi-solutions",
+  "version": "1.0.0",
+  "description": "Agente inteligente orientado a responder consultas en lenguaje natural sobre procesos y documentación de certificación de productos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "check": "node --check src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrodCode/certi-solutions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/KrodCode/certi-solutions/issues"
+  },
+  "homepage": "https://github.com/KrodCode/certi-solutions#readme",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
