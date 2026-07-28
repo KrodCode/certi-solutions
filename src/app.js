@@ -1,4 +1,4 @@
-﻿import express from 'express';
+import express from 'express';
 import helmet from 'helmet';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -17,6 +17,10 @@ const currentFile = fileURLToPath(import.meta.url);
 const currentDirectory = path.dirname(currentFile);
 
 const app = express();
+
+if (process.env.VERCEL === '1') {
+  app.set('trust proxy', 1);
+}
 
 app.disable('x-powered-by');
 
