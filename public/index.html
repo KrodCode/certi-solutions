@@ -21,55 +21,163 @@
 
 <body>
   <header class="header">
-    <div class="container">
+    <div class="container header-content">
       <span class="brand">Certi-Solutions</span>
+      <span class="project-label">Challenge Alura Agente</span>
     </div>
   </header>
 
   <main class="container main-content">
     <section class="hero">
-      <p class="eyebrow">Challenge Alura Agente</p>
+      <p class="eyebrow">Asistente documental inteligente</p>
 
       <h1>
-        Agente inteligente para procesos de certificación
+        Consultas sobre procesos de certificación
       </h1>
 
       <p class="description">
-        Plataforma orientada a responder preguntas basadas en
-        documentación técnica y procedimientos de certificación.
+        Realiza preguntas en lenguaje natural y recibe respuestas
+        basadas exclusivamente en la documentación académica de
+        Certi-Solutions.
       </p>
     </section>
 
-    <section class="status-card" aria-labelledby="status-title">
-      <h2 id="status-title">Estado del servicio</h2>
+    <section
+      class="status-card"
+      aria-labelledby="status-title"
+    >
+      <div>
+        <h2 id="status-title">Estado del servicio</h2>
 
-      <p id="service-status">
-        Verificando conexión con el servidor...
-      </p>
+        <p
+          id="service-status"
+          class="status-pending"
+          aria-live="polite"
+        >
+          Verificando conexión con el servidor...
+        </p>
+      </div>
     </section>
 
-    <section class="agent-card" aria-labelledby="agent-title">
-      <h2 id="agent-title">Asistente documental</h2>
+    <section
+      class="agent-card"
+      aria-labelledby="agent-title"
+    >
+      <div class="section-heading">
+        <p class="section-number">01</p>
+
+        <div>
+          <h2 id="agent-title">Realizar una consulta</h2>
+
+          <p>
+            Pregunta sobre documentación, ensayos, estados,
+            no conformidades, plazos o resultados.
+          </p>
+        </div>
+      </div>
+
+      <form id="agent-form" novalidate>
+        <label for="question">
+          Pregunta
+        </label>
+
+        <textarea
+          id="question"
+          name="question"
+          rows="6"
+          minlength="3"
+          maxlength="1000"
+          placeholder="Ejemplo: ¿Qué ocurre si la documentación está incompleta?"
+          aria-describedby="question-help question-counter"
+          disabled
+          required
+        ></textarea>
+
+        <div class="field-information">
+          <small id="question-help">
+            La respuesta se generará utilizando la base de conocimiento CSV.
+          </small>
+
+          <small id="question-counter">
+            0 / 1000
+          </small>
+        </div>
+
+        <p
+          id="form-error"
+          class="form-error"
+          role="alert"
+          hidden
+        ></p>
+
+        <button
+          id="submit-question"
+          type="submit"
+          disabled
+        >
+          Consultar agente
+        </button>
+      </form>
+    </section>
+
+    <section
+      id="result-card"
+      class="result-card"
+      aria-labelledby="result-title"
+      aria-live="polite"
+      hidden
+    >
+      <div class="section-heading">
+        <p class="section-number">02</p>
+
+        <div>
+          <h2 id="result-title">Respuesta del agente</h2>
+
+          <p id="result-status">
+            Resultado basado en la documentación disponible.
+          </p>
+        </div>
+      </div>
+
+      <div class="answer-container">
+        <p id="agent-answer"></p>
+      </div>
+
+      <dl id="result-metadata" class="result-metadata">
+        <div>
+          <dt>Referencia</dt>
+          <dd id="result-reference">No disponible</dd>
+        </div>
+
+        <div>
+          <dt>Categoría</dt>
+          <dd id="result-category">No disponible</dd>
+        </div>
+
+        <div>
+          <dt>Fuente</dt>
+          <dd id="result-source">No disponible</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="disclaimer">
+      <h2>Alcance de las respuestas</h2>
 
       <p>
-        El módulo de preguntas y respuestas será implementado
-        en una siguiente etapa.
+        Certi-Solutions entrega orientación académica basada en
+        documentos ficticios. Sus respuestas no reemplazan una
+        evaluación técnica, profesional, oficial o regulatoria.
       </p>
-
-      <label for="question">Pregunta</label>
-
-      <textarea
-        id="question"
-        rows="5"
-        maxlength="1000"
-        placeholder="Escribe una consulta sobre certificación..."
-        disabled
-      ></textarea>
-
-      <button type="button" disabled>
-        Consultar agente
-      </button>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Certi-Solutions · Proyecto académico Challenge Alura Agente
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
