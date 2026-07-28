@@ -1,4 +1,4 @@
-﻿
+
 ## Certi-Solutions
 
 Certi-Solutions es un agente inteligente desarrollado para el **Challenge Alura Agente**, perteneciente al programa **ONE AI for Tech** de Alura Latam y Oracle Next Education.
@@ -11,7 +11,7 @@ El agente utiliza un archivo CSV como base de conocimiento, recupera los fragmen
 
 La aplicaciÃ³n se encuentra desplegada pÃºblicamente en Vercel:
 
-**URL pÃºblica:** [{{VERCEL_URL}}]({{VERCEL_URL}})
+**URL pública:** https://certi-solutions.vercel.app
 
 ## Objetivo
 
@@ -410,28 +410,23 @@ No se configuraron `HOST` ni `PORT`, ya que estos valores son administrados auto
 
 ### URL pÃºblica
 
-[{{VERCEL_URL}}]({{VERCEL_URL}})
+[https://certi-solutions.vercel.app](https://certi-solutions.vercel.app)
 
 ## Evidencias del proyecto
 
-Las capturas reales del funcionamiento de la aplicaciÃ³n se encuentran en:
+Las siguientes capturas demuestran el desarrollo, las pruebas y el funcionamiento público de Certi-Solutions.
 
-```text
-src/Images
-```
+### Aplicación funcionando en Vercel
 
-### Vista principal de Certi-Solutions
+![Aplicación Certi-Solutions desplegada en Vercel](src/Images/web.png)
 
-![Vista principal de Certi-Solutions](src/Images/{{IMAGE_HOME}})
+### Pruebas automatizadas del proyecto
 
-### Consulta respondida por el agente
+![Pruebas automatizadas ejecutadas correctamente](src/Images/pruebas.png)
 
-![Consulta respondida por Certi-Solutions](src/Images/{{IMAGE_AGENT}})
+### Historial de desarrollo en Git
 
-### AplicaciÃ³n desplegada pÃºblicamente en Vercel
-
-![Evidencia del despliegue en Vercel](src/Images/{{IMAGE_DEPLOY}})
-
+![Historial de commits del proyecto](src/Images/git.png)
 ## Limitaciones
 
 - La base de conocimiento contiene informaciÃ³n ficticia y acadÃ©mica.
