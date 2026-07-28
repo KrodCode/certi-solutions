@@ -1,6 +1,6 @@
 ﻿import {
-  findBestKnowledgeAnswer,
-} from '../services/knowledge-search.service.js';
+  generateGroundedAnswer,
+} from '../services/agent-response.service.js';
 
 const MINIMUM_QUESTION_LENGTH = 3;
 const MAXIMUM_QUESTION_LENGTH = 1000;
@@ -47,7 +47,7 @@ function validateQuestion(value) {
   };
 }
 
-export function askAgentQuestion(
+export async function askAgentQuestion(
   request,
   response,
   next,
@@ -67,19 +67,30 @@ export function askAgentQuestion(
       });
     }
 
-    const result = findBestKnowledgeAnswer(
-      validation.question,
-    );
+    const result =
+      await generateGroundedAnswer(
+        validation.question,
+      );
 
     return response.status(200).json({
       status: 'ok',
       result: {
         found: result.found,
         answer: result.answer,
-        referenceId: result.referenceId,
-        category: result.category ?? null,
-        source: result.source,
-        score: result.score ?? null,
+        referenceId:
+          result.referenceId,
+        category:
+          result.category ?? null,
+        source:
+          result.source,
+        score:
+          result.score ?? null,
+        mode:
+          result.mode,
+        model:
+          result.model,
+        references:
+          result.references,
       },
     });
   } catch (error) {

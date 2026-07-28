@@ -11,7 +11,8 @@
     "knowledge:validate": "node scripts/validate-knowledge.js",
     "knowledge:search": "node scripts/test-knowledge-search.js",
     "test:agent": "node scripts/test-agent-endpoint.js",
-    "test:security": "node scripts/test-security-controls.js"
+    "test:security": "node scripts/test-security-controls.js",
+    "test:ai": "node scripts/test-ai-service.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "node": ">=20"
   },
   "dependencies": {
+    "@google/genai": "^2.13.0",
     "csv-parse": "^7.0.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
